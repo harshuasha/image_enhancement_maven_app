@@ -13,9 +13,7 @@ pipeline{
               mvn compile
 	     '''
 	    }
-
-	   }
-
+         }
 	stage('Unit_test') {
 	  steps {
 	   sh '''
@@ -23,10 +21,7 @@ pipeline{
             mvn test
 	   '''
 	 }
-
 	}
-	
     }
-
 }
 
