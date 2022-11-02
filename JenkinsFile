@@ -1,0 +1,32 @@
+pipeline{
+	agent{
+         label 'Slave_1 || Slave2'
+	}
+	tools {
+	 maven 'Apache Maven 3.6.3'
+	}
+	stages {
+	   stage('Build_app'){
+	    steps {
+	     sh'''
+              cd enhancement_app
+              mvn compile
+	     '''
+	    }
+
+	   }
+
+	stage('Unit_test') {
+	  steps {
+	   sh '''
+	    cd enhancement_app
+            mvn test
+	   '''
+	 }
+
+	}
+	
+    }
+
+}
+
