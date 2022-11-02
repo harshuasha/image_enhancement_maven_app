@@ -9,7 +9,7 @@ pipeline{
 	   stage('Build_app'){
 	    steps {
 	     sh'''
-              cd enhancement_app
+              cd enhancement_app/enhancement_app/
               mvn compile
 	     '''
 	    }
@@ -17,7 +17,7 @@ pipeline{
 	stage('Unit_test') {
 	  steps {
 	   sh '''
-	    cd enhancement_app
+	    cd enhancement_app/enhancement_app/
             mvn test
 	   '''
 	 }
